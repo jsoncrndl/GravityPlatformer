@@ -7,6 +7,9 @@ public class Astronaut : MonoBehaviour
     List<Gravity> gravities;
     [SerializeField] FloatValue mass;
     Rigidbody2D rb;
+
+    int CounterClockwise = -1;
+    float walkSpeed = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,17 @@ public class Astronaut : MonoBehaviour
             force += distance.normalized * ((this.mass.Value * grav.density * grav.transform.parent.localScale.x) / (distance.sqrMagnitude));
         }
         rb.AddForce(force);
+        Vector2 velocityParallel = this.transform.right * this.walkSpeed * this.CounterClockwise;
+        Vector2 velocityPerpendicular = Vector2.Dot(rb.velocity, -this.transform.up) * this.transform.up;
+        rb.velocity = velocityParallel + velocityPerpendicular;
+
+        this.transform.rotation = Quaternion.LookRotation(Vector3.forward, force.normalized);
+    }
+
+    public void jump(float scalar)
+    {
+        Vector3 velocityParallel = this.transform.right * this.walkSpeed * this.CounterClockwise;
+        rb.velocity = velocityParallel + (this.transform.up * scalar);
     }
 
     public void addGravity(Gravity gravity)
