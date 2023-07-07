@@ -53,14 +53,12 @@ public class ShipController : MonoBehaviour
         rotationInput = ctx.ReadValue<float>();
     }
 
-    public void Jump()
+    public void Jump(InputAction.CallbackContext ctx)
     {
-        if (aimPlanet != null || animating) return;
+        if (!ctx.performed || aimPlanet == null || animating) return;
 
         //Look at the other planet
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, aimPlanet.transform.position - transform.position);
-
-        Debug.Log("");
+        transform.rotation = Quaternion.LookRotation(aimPlanet.transform.position - transform.position);
 
         //Jump to other planet
         transform.parent = aimPlanet.transform;
