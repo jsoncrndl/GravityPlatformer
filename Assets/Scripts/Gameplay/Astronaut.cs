@@ -29,8 +29,6 @@ public class Astronaut : MonoBehaviour
     private void FixedUpdate()
     {
         onGround = GroundCheck();
-        Debug.Log(onGround);
-
         float directionModifier = isReversed ? -1 : 1;
 
         var force = Vector2.zero;
@@ -49,6 +47,7 @@ public class Astronaut : MonoBehaviour
 
     public void jump(float scalar)
     {
+        Debug.Log(rb.velocity);
         Vector3 velocityParallel = Vector3.Project(rb.velocity, transform.right);
         rb.velocity = velocityParallel + (this.transform.up * scalar);
     }

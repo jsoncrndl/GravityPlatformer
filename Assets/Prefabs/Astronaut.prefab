@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
   mass: {fileID: 11400000, guid: 8565232eca1f6694ba094c74d49ece54, type: 2}
   isReversed: 0
   walkSpeed: 1
