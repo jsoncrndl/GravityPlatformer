@@ -7,7 +7,7 @@ public class ShipController : MonoBehaviour
 {
     private float rotationInput;
     private bool animating;
-    private GameObject aimPlanet;
+    [SerializeField] private GameObject aimPlanet;
     private GameObject currentPlanet;
     [SerializeField] private float rotateSpeed;
 
@@ -57,8 +57,10 @@ public class ShipController : MonoBehaviour
     {
         if (aimPlanet != null || animating) return;
 
-        //Look at the 
+        //Look at the other planet
         transform.rotation = Quaternion.LookRotation(Vector3.forward, aimPlanet.transform.position - transform.position);
+
+        Debug.Log("");
 
         //Jump to other planet
         transform.parent = aimPlanet.transform;
