@@ -60,6 +60,8 @@ public class ShipController : MonoBehaviour
         //Look at the other planet
         transform.rotation = Quaternion.LookRotation(aimPlanet.transform.position - transform.position);
 
+        //Animate!
+
         //Jump to other planet
         transform.parent = aimPlanet.transform;
         transform.localPosition = Vector3.zero;

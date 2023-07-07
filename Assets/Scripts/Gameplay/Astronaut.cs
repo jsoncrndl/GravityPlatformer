@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,7 +38,7 @@ public class Astronaut : MonoBehaviour
             force += distance.normalized * ((this.mass.Value * grav.density * grav.transform.parent.localScale.x) / (distance.sqrMagnitude));
         }
         rb.AddForce(force);
-        Vector2 velocityParallel = this.transform.right * this.walkSpeed * this.CounterClockwise;
+        Vector2 velocityParallel = onGround ? this.transform.right * this.walkSpeed * this.CounterClockwise : Vector2.zero;
         Vector2 velocityPerpendicular = Vector2.Dot(rb.velocity, -this.transform.up) * this.transform.up;
         rb.velocity = velocityParallel + velocityPerpendicular;
 
