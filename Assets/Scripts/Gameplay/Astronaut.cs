@@ -10,8 +10,8 @@ public class Astronaut : MonoBehaviour
     CapsuleCollider2D capsuleCollider;
 
     bool onGround;
-    int CounterClockwise = -1;
-    float walkSpeed = 1;
+    [SerializeField] bool isReversed;
+    [SerializeField] float walkSpeed = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,8 @@ public class Astronaut : MonoBehaviour
         onGround = GroundCheck();
         Debug.Log(onGround);
 
+        float directionModifier = isReversed ? -1 : 1;
+
         var force = Vector2.zero;
         foreach (var grav in gravities)
         {
@@ -38,17 +40,17 @@ public class Astronaut : MonoBehaviour
             force += distance.normalized * ((this.mass.Value * grav.density * grav.transform.parent.localScale.x) / (distance.sqrMagnitude));
         }
         rb.AddForce(force);
-        Vector2 velocityParallel = onGround ? this.transform.right * this.walkSpeed * this.CounterClockwise : Vector2.zero;
-        Vector2 velocityPerpendicular = Vector2.Dot(rb.velocity, -this.transform.up) * this.transform.up;
+        Vector2 velocityParallel = onGround ? this.transform.right * this.walkSpeed * directionModifier : Vector2.zero;
+        Vector2 velocityPerpendicular = Vector2.Dot(rb.velocity, -this.transform.up) * -this.transform.up;
         rb.velocity = velocityParallel + velocityPerpendicular;
 
-        this.transform.rotation = Quaternion.LookRotation(Vector3.forward, force.normalized);
+        this.transform.rotation = Quaternion.LookRotation(Vector3.forward, -force.normalized);
     }
 
     public void jump(float scalar)
     {
-        Vector3 velocityParallel = this.transform.right * this.walkSpeed * this.CounterClockwise;
-        rb.velocity = velocityParallel + (this.transform.up * scalar);
+        //Vector3 velocityParallel = this.transform.right * this.walkSpeed * ;
+        //rb.velocity = velocityParallel + (this.transform.up * scalar);
     }
 
     public void addGravity(Gravity gravity)
@@ -63,6 +65,6 @@ public class Astronaut : MonoBehaviour
 
     public bool GroundCheck()
     {
-        return Physics2D.OverlapCircle(transform.position + transform.up * capsuleCollider.size.x, capsuleCollider.size.x, groundLayers);
+        return Physics2D.OverlapCircle(transform.position + transform.up * (capsuleCollider.size.x -.01f), capsuleCollider.size.x, groundLayers);
     }
 }
