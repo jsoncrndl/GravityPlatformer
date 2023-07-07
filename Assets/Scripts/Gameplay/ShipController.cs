@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,10 +63,14 @@ public class ShipController : MonoBehaviour
 
         //Animate!
 
+
         //Jump to other planet
         transform.parent = aimPlanet.transform;
         transform.localPosition = Vector3.zero;
+
         transform.rotation = Quaternion.LookRotation(Vector3.forward, -transform.up);
+        Debug.Log(transform
+            );
     }
 
     public void Thrust()
