@@ -5,7 +5,7 @@ using UnityEngine;
 public class Astronaut : MonoBehaviour
 {
     List<Gravity> gravities;
-    float mass = 1;
+    [SerializeField] FloatValue mass;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class Astronaut : MonoBehaviour
         foreach (var grav in gravities)
         {
             Vector2 distance = grav.transform.position - this.transform.position;
-            force += distance.normalized * ((this.mass * grav.density * grav.GetComponent<CircleCollider2D>().radius * grav.transform.parent.localScale.x) / (distance.sqrMagnitude));
+            force += distance.normalized * ((this.mass.Value * grav.density * grav.transform.parent.localScale.x) / (distance.sqrMagnitude));
         }
         rb.AddForce(force);
     }
