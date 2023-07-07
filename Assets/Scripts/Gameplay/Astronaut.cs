@@ -41,7 +41,7 @@ public class Astronaut : MonoBehaviour
         }
         rb.AddForce(force);
         Vector2 velocityParallel = onGround ? this.transform.right * this.walkSpeed * directionModifier : Vector2.zero;
-        Vector2 velocityPerpendicular = Vector2.Dot(rb.velocity, -this.transform.up) * -this.transform.up;
+        Vector2 velocityPerpendicular = (Vector2)Vector3.Project(rb.velocity, -this.transform.up);
         rb.velocity = velocityParallel + velocityPerpendicular;
 
         this.transform.rotation = Quaternion.LookRotation(Vector3.forward, -force.normalized);
@@ -49,8 +49,8 @@ public class Astronaut : MonoBehaviour
 
     public void jump(float scalar)
     {
-        //Vector3 velocityParallel = this.transform.right * this.walkSpeed * ;
-        //rb.velocity = velocityParallel + (this.transform.up * scalar);
+        Vector3 velocityParallel = Vector3.Project(rb.velocity, transform.right);
+        rb.velocity = velocityParallel + (this.transform.up * scalar);
     }
 
     public void addGravity(Gravity gravity)
