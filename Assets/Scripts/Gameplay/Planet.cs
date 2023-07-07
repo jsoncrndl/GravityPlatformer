@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
+    public float radius;
+
     // Start is called before the first frame update
     void Start()
     {
