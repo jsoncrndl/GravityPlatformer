@@ -1,16 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class CollisionEvent : MonoBehaviour
+public class ShipController : MonoBehaviour
 {
-    [SerializeField] float myVariable;
-    [SerializeField] bool secondVariable;
-    public Vector3 vectorVar;
-    private Color myColor;
-    public GameObject sceneRef;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +13,6 @@ public class CollisionEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

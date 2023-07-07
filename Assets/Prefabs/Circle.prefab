@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1863711742530023953}
   - component: {fileID: 2097113710072809978}
   - component: {fileID: 860645244494986915}
-  - component: {fileID: 4849828503183828301}
   - component: {fileID: 6409146679637580799}
   - component: {fileID: 8830555909318359875}
   m_Layer: 0
@@ -35,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 2008061974323649045}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2097113710072809978
 CircleCollider2D:
@@ -99,22 +98,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4849828503183828301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3353008967008777658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06bd2f18536c959499d24dfd64fee724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myVariable: 2.46
-  secondVariable: 0
-  vectorVar: {x: 3.32, y: -0.08, z: 2.16}
-  sceneRef: {fileID: 0}
 --- !u!82 &6409146679637580799
 AudioSource:
   m_ObjectHideFlags: 0
