@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Astronaut : MonoBehaviour
 {
+    [SerializeField] LayerMask groundLayers;
     List<Gravity> gravities;
     [SerializeField] FloatValue mass;
     Rigidbody2D rb;
+    CapsuleCollider2D capsuleCollider;
 
+    bool onGround;
     int CounterClockwise = -1;
     float walkSpeed = 1;
     // Start is called before the first frame update
@@ -15,6 +18,7 @@ public class Astronaut : MonoBehaviour
     {
         gravities = new List<Gravity>();
         rb = this.GetComponent<Rigidbody2D>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -25,6 +29,9 @@ public class Astronaut : MonoBehaviour
 
     private void FixedUpdate()
     {
+        onGround = GroundCheck();
+        Debug.Log(onGround);
+
         var force = Vector2.zero;
         foreach (var grav in gravities)
         {
@@ -53,5 +60,10 @@ public class Astronaut : MonoBehaviour
     public void removeGravity(Gravity gravity)
     {
         this.gravities.Remove(gravity);
+    }
+
+    public bool GroundCheck()
+    {
+        return Physics2D.OverlapCircle(transform.position + transform.up * capsuleCollider.size.x, capsuleCollider.size.x, groundLayers);
     }
 }
