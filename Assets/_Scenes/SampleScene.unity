@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2008061974323649045, guid: 149abe6f14f4a024b9539ae5910c0046, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3297200430438271715, guid: 149abe6f14f4a024b9539ae5910c0046, type: 3}
       propertyPath: groundLayers.m_Bits
@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8511055747051497242, guid: 149abe6f14f4a024b9539ae5910c0046, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
