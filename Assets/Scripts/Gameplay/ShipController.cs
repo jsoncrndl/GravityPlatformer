@@ -142,6 +142,7 @@ public class ShipController : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(Vector3.forward, aimPlanet.transform.position - transform.position);
         startJump.Invoke();
 
+        rotationInput = 0;
         pivotChild.transform.parent = null;
         currentPlanet = aimPlanet;
 
