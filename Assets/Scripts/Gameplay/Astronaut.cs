@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Astronaut : MonoBehaviour
 {
-    [SerializeField] LayerMask groundLayers;
+    [SerializeField] LayerMask ignoreLayers;
     List<Gravity> gravities;
     [SerializeField] FloatValue mass;
     Rigidbody2D rb;
@@ -54,8 +54,6 @@ public class Astronaut : MonoBehaviour
         Vector2 velocityPerpendicular = (Vector2)Vector3.Project(rb.velocity, -this.transform.up);
         rb.velocity = this.ParallelVelocity + velocityPerpendicular;
 
-
-
         this.transform.rotation = Quaternion.LookRotation(Vector3.forward, -force.normalized);
     }
 
@@ -76,6 +74,6 @@ public class Astronaut : MonoBehaviour
 
     public bool GroundCheck()
     {
-        return Physics2D.OverlapCircle(transform.position + transform.up * (capsuleCollider.size.x -.01f), capsuleCollider.size.x, groundLayers);
+        return Physics2D.OverlapCircle(transform.position + transform.up * (capsuleCollider.size.x -.01f - capsuleCollider.size.y / 2), capsuleCollider.size.x, ~ignoreLayers);
     }
 }

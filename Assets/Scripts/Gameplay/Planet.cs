@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 [SelectionBase]
 public class Planet : MonoBehaviour
 {
     public float radius;
     private Rigidbody2D rb;
-    private FloatValue rocketThrust;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();   
     }
 
     // Update is called once per frame
@@ -20,8 +18,8 @@ public class Planet : MonoBehaviour
         
     }
 
-    public void Push(Vector2 direction)
+    public void Push(Vector2 force)
     {
-        rb.AddForce(direction * rocketThrust.Value);
+        rb.AddForce(force);
     }
 }
