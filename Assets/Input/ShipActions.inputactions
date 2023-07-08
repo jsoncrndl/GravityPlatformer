@@ -9,7 +9,7 @@
                     "name": "Move",
                     "type": "Value",
                     "id": "5e46f52b-92a1-46b9-b2a8-8c454a33babf",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -37,7 +37,7 @@
                 {
                     "name": "",
                     "id": "121d729f-2bbf-4c35-8a37-1c38dbc46d70",
-                    "path": "<Keyboard>/j",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -79,9 +79,20 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "597fb7d0-52f2-464f-8bff-e7be63820fdf",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thrust",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "WASD",
                     "id": "1d5e11f6-cba5-4978-8d2c-5981b64b72c1",
-                    "path": "2DVector",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -90,30 +101,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Negative",
                     "id": "fa21dce8-6e96-4c0d-a773-1cfddfae2e09",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "6ac918a0-f804-49f6-90cd-698a0ae1be4b",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "009d2dd4-fca3-4739-9068-6bd2ca8732e3",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -123,8 +112,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
-                    "id": "4c2a4a2f-9e6b-4fa7-862b-c136f4711a02",
+                    "name": "Positive",
+                    "id": "6ac918a0-f804-49f6-90cd-698a0ae1be4b",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -136,7 +125,7 @@
                 {
                     "name": "",
                     "id": "f114c7ca-6454-4368-8a1d-b75aae9aebe7",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/leftStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
