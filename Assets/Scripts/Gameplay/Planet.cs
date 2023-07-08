@@ -3,7 +3,6 @@ using UnityEngine;
 [SelectionBase]
 public class Planet : MonoBehaviour
 {
-    public float radius;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update

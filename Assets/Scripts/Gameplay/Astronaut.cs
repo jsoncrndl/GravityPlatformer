@@ -41,8 +41,14 @@ public class Astronaut : MonoBehaviour
         foreach (var grav in gravities)
         {
             Vector2 distance = grav.transform.position - this.transform.position;
-            force += distance.normalized * ((this.mass.Value * grav.density * grav.transform.parent.localScale.x) / (distance.sqrMagnitude));
+            Vector2 gravForce = distance.normalized * ((this.mass.Value * grav.density * grav.transform.parent.localScale.x) / (distance.sqrMagnitude));
+
+            Debug.DrawRay(transform.position, gravForce * 1000, Color.yellow);
+            
+            force += gravForce;
         }
+
+        Debug.DrawRay(transform.position, force * 1000, Color.red);
         rb.AddForce(force);
 
         if (onGround)

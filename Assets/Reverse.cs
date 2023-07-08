@@ -16,9 +16,9 @@ public class Reverse : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Astronaut temp = collision.GetComponent<Astronaut>();
+        Astronaut temp = collision.gameObject.GetComponent<Astronaut>();
         if (temp != null)
         {
             temp.reverse();

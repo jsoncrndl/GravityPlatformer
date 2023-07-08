@@ -24,4 +24,10 @@ public class Gravity : MonoBehaviour
             temp.removeGravity(this);
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 1, 0, .5f);
+        Gizmos.DrawWireSphere(transform.position, GetComponent<CircleCollider2D>().radius * transform.lossyScale.x);
+    }
 }

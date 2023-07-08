@@ -108,6 +108,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 40ecc4aa-dbb1-43b7-b582-3c92e96abacf
     m_ActionName: ShipControls/Thrust[/Keyboard/s,/DualSenseGamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6268150690757617251}
+        m_TargetAssemblyTypeName: ShipController, Assembly-CSharp
+        m_MethodName: ResetLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 32a7ab62-9ec0-4f1c-af89-fcdcd22f40f7
+    m_ActionName: ShipControls/Reset[/Keyboard/r,/DualSenseGamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6268150690757617251}
+        m_TargetAssemblyTypeName: ShipController, Assembly-CSharp
+        m_MethodName: TryWin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f3b37943-5504-44e6-8fdb-c538431eef1d
+    m_ActionName: ShipControls/Win[/Keyboard/enter,/DualSenseGamepadHID/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: ShipControls
@@ -259,6 +291,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  maxFuel: 10
+  winLocation: {fileID: 0}
 --- !u!82 &5385672215198072783
 AudioSource:
   m_ObjectHideFlags: 0
