@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3297200430438271715, guid: 149abe6f14f4a024b9539ae5910c0046, type: 3}
       propertyPath: walkSpeed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3297200430438271715, guid: 149abe6f14f4a024b9539ae5910c0046, type: 3}
       propertyPath: groundLayers.m_Bits
