@@ -10,6 +10,8 @@ public class Astronaut : MonoBehaviour
     Rigidbody2D rb;
     CapsuleCollider2D capsuleCollider;
     Vector2 ParallelVelocity;
+    Animator animator;
+    SpriteRenderer spriteRenderer;
 
     bool onGround;
     [SerializeField] bool isReversed;
@@ -20,6 +22,8 @@ public class Astronaut : MonoBehaviour
         gravities = new List<Gravity>();
         rb = this.GetComponent<Rigidbody2D>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -44,11 +48,11 @@ public class Astronaut : MonoBehaviour
         if (onGround)
         {
             this.ParallelVelocity = this.transform.right * this.walkSpeed * directionModifier;
+            animator.SetBool("Landed", true);
         }
         else
         {
             ParallelVelocity -= (Vector2)Vector3.Project(ParallelVelocity, force);
-            Debug.Log(this.ParallelVelocity);
         }
         
         Vector2 velocityPerpendicular = (Vector2)Vector3.Project(rb.velocity, -this.transform.up);
@@ -60,6 +64,14 @@ public class Astronaut : MonoBehaviour
     public void jump(float scalar)
     {
         rb.velocity = (this.transform.up * scalar);
+        animator.SetTrigger("IsJumping");
+
+    }
+
+    public void reverse()
+    {
+        isReversed = !isReversed;
+        spriteRenderer.flipX = !isReversed;
     }
 
     public void addGravity(Gravity gravity)

@@ -70,7 +70,6 @@ public class ShipController : MonoBehaviour
         {
             aimPlanet = null;
         }
-        Debug.Log(aimPlanet);
     }
 
     public void Rotate(InputAction.CallbackContext ctx)
