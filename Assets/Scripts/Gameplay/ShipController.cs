@@ -5,10 +5,10 @@ using UnityEngine.InputSystem;
 
 public class ShipController : MonoBehaviour
 {
-    private Quaternion targetRotation;
-    private Vector2 rotationInput;
+    private float rotationInput;
     private bool animating;
     private Planet aimPlanet;
+
     [SerializeField] private Planet currentPlanet;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private FloatValue thrust;
@@ -90,9 +90,9 @@ public class ShipController : MonoBehaviour
 
     private void UpdateRotation()
     {
-        if (rotationInput.sqrMagnitude > 0)
+        if (rotationInput != 0)
         {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+            transform.Rotate(transform.forward, rotationInput * -rotateSpeed * Time.deltaTime);
         }
 
         RaycastHit2D result = Physics2D.Raycast(pivotChild.transform.position, transform.up, 100, LayerMask.GetMask("Planet"));
@@ -113,8 +113,7 @@ public class ShipController : MonoBehaviour
     {
         if (animating) return;
 
-        rotationInput = ctx.ReadValue<Vector2>();
-        targetRotation = Quaternion.LookRotation(Vector3.forward, rotationInput);
+        rotationInput = ctx.ReadValue<float>();
 
         //reverseInput = transform.up.y < 0;
     }
@@ -126,7 +125,6 @@ public class ShipController : MonoBehaviour
 
         transform.rotation = Quaternion.LookRotation(Vector3.forward, -transform.up);
         pivotChild.transform.localPosition = Vector3.up * (currentPlanet.transform.localScale.x + .01f);
-        targetRotation = transform.rotation;
         pivotChild.transform.localRotation = Quaternion.identity;
 
         animating = false;
