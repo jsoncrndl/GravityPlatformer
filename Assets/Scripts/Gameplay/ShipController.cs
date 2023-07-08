@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class ShipController : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class ShipController : MonoBehaviour
     private float fuel;
 
     public event Action<float> staminaUpdated;
+
+    [SerializeField] private WinLocation winLocation;
 
     // Start is called before the first frame update
     void Start()
@@ -173,5 +176,15 @@ public class ShipController : MonoBehaviour
     public void SetFuel(float seconds)
     {
         fuel = seconds;
+    }
+
+    public void TryWin()
+    {
+        winLocation.Win();
+    }
+
+    public void ResetLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
