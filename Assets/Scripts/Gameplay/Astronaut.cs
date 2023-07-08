@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Astronaut : MonoBehaviour
@@ -8,6 +9,7 @@ public class Astronaut : MonoBehaviour
     [SerializeField] FloatValue mass;
     Rigidbody2D rb;
     CapsuleCollider2D capsuleCollider;
+    Vector2 ParallelVelocity;
 
     bool onGround;
     [SerializeField] bool isReversed;
@@ -38,18 +40,27 @@ public class Astronaut : MonoBehaviour
             force += distance.normalized * ((this.mass.Value * grav.density * grav.transform.parent.localScale.x) / (distance.sqrMagnitude));
         }
         rb.AddForce(force);
-        Vector2 velocityParallel = onGround ? this.transform.right * this.walkSpeed * directionModifier : Vector2.zero;
+
+        if (onGround)
+        {
+            this.ParallelVelocity = this.transform.right * this.walkSpeed * directionModifier;
+        }
+        else
+        {
+            this.ParallelVelocity -= 2 * this.ParallelVelocity.normalized;
+            Debug.Log(this.ParallelVelocity);
+        }
         Vector2 velocityPerpendicular = (Vector2)Vector3.Project(rb.velocity, -this.transform.up);
-        rb.velocity = velocityParallel + velocityPerpendicular;
+        rb.velocity = this.ParallelVelocity + velocityPerpendicular;
+
+
 
         this.transform.rotation = Quaternion.LookRotation(Vector3.forward, -force.normalized);
     }
 
     public void jump(float scalar)
     {
-        Debug.Log(rb.velocity);
-        Vector3 velocityParallel = Vector3.Project(rb.velocity, transform.right);
-        rb.velocity = velocityParallel + (this.transform.up * scalar);
+        rb.velocity = (this.transform.up * scalar);
     }
 
     public void addGravity(Gravity gravity)
