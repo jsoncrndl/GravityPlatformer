@@ -1281,6 +1281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8511055747051497242, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -147970180, guid: 13e0e7cf6cb3ae447a2404f0a2d08e0e, type: 3}
     - target: {fileID: 8748246806780681191, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
