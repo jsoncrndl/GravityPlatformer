@@ -9,7 +9,7 @@ public class TriggerEvent : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Astronaut astronaut = GetComponent<Astronaut>();
-        if (astronaut)
+        if (astronaut != null)
         {
             enterTrigger?.Invoke(astronaut);
         }
@@ -18,9 +18,9 @@ public class TriggerEvent : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Astronaut astronaut = GetComponent<Astronaut>();
-        if (astronaut)
+        if (astronaut != null)
         {
-            enterTrigger?.Invoke(astronaut);
+            exitTrigger?.Invoke(astronaut);
         }
     }
 }
