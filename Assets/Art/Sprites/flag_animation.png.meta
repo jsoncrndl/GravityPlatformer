@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 65216f4ee5888004eb50c23301970106
+guid: 71d8a5ddf2987cd4fa2f2b24c0cc7f16
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,85 +123,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spaceships_0
+      name: flag_animation_1
       rect:
         serializedVersion: 2
-        x: 93
-        y: 547
-        width: 378
-        height: 283
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 60
+        y: 120
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.145, y: 0.04}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71a3f2393d6dd0d4290f7f18882d4f3c
-      internalID: 1350050186
+      spriteID: a9672114c4fd9884c9c7eb73080513c7
+      internalID: -311570862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spaceships_1
+      name: flag_animation_2
       rect:
         serializedVersion: 2
-        x: 517
-        y: 560
-        width: 393
-        height: 270
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 60
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.145, y: 0.04}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0538ed8962d7fb148a67adf4eb80bce6
-      internalID: -451031648
+      spriteID: eb7098635a7063244b45889c55d72492
+      internalID: -1577642462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spaceships_2
+      name: flag_animation_3
       rect:
         serializedVersion: 2
-        x: 103
-        y: 172
-        width: 357
-        height: 264
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 60
+        y: 60
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.145, y: 0.04}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8028c25190b1df04380802239aa19b5b
-      internalID: 159010495
+      spriteID: cdca7e5b012053c45a6b6b7c771f8ce8
+      internalID: 469692770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spaceships_3
+      name: flag_animation_4
       rect:
         serializedVersion: 2
-        x: 528
-        y: 172
-        width: 372
-        height: 263
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 0
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.145, y: 0.04}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 997e38fa7386a064581d3e888566c5fc
-      internalID: 1405862363
+      spriteID: b927ba3fa8103c24d8eb49d5dd40a85e
+      internalID: 585917681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag_animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.145, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbab98f6f3287514eb3d09d769148732
+      internalID: -1308166778
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spaceships_0: 1350050186
-      Spaceships_1: -451031648
-      Spaceships_2: 159010495
-      Spaceships_3: 1405862363
+      flag_animation_0: -1308166778
+      flag_animation_1: -311570862
+      flag_animation_2: -1577642462
+      flag_animation_3: 469692770
+      flag_animation_4: 585917681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
