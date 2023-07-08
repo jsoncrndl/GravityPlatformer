@@ -9,7 +9,7 @@ public class ShipController : MonoBehaviour
     private float rotationInput;
     private bool animating;
     [SerializeField] private GameObject aimPlanet;
-    private GameObject currentPlanet;
+    private Planet currentPlanet;
     [SerializeField] private float rotateSpeed;
 
     // This script is on the pivot. pivotChild has the actual ship art.
@@ -59,7 +59,7 @@ public class ShipController : MonoBehaviour
         if (!ctx.performed || aimPlanet == null || animating) return;
 
         //Look at the other planet
-        transform.rotation = Quaternion.LookRotation(aimPlanet.transform.position - transform.position);
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, aimPlanet.transform.position - transform.position);
 
         //Animate!
 
@@ -69,12 +69,12 @@ public class ShipController : MonoBehaviour
         transform.localPosition = Vector3.zero;
 
         transform.rotation = Quaternion.LookRotation(Vector3.forward, -transform.up);
-        Debug.Log(transform
-            );
+        Debug.Log(transform.position);
     }
 
     public void Thrust()
     {
         if (animating) return;
+
     }
 }

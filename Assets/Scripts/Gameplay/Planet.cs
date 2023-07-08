@@ -5,6 +5,8 @@ using UnityEngine;
 public class Planet : MonoBehaviour
 {
     public float radius;
+    private Rigidbody2D rb;
+    private FloatValue rocketThrust;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +18,10 @@ public class Planet : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Push(Vector2 direction)
+    {
+        rb.AddForce(direction * rocketThrust.Value);
     }
 }

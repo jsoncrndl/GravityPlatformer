@@ -47,9 +47,10 @@ public class Astronaut : MonoBehaviour
         }
         else
         {
-            this.ParallelVelocity -= 2 * this.ParallelVelocity.normalized;
+            ParallelVelocity -= (Vector2)Vector3.Project(ParallelVelocity, force);
             Debug.Log(this.ParallelVelocity);
         }
+        
         Vector2 velocityPerpendicular = (Vector2)Vector3.Project(rb.velocity, -this.transform.up);
         rb.velocity = this.ParallelVelocity + velocityPerpendicular;
 
