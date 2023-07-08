@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Reverse : MonoBehaviour
 {
-    [SerializeField] float jump_scale;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +21,7 @@ public class Obstacle : MonoBehaviour
         Astronaut temp = collision.GetComponent<Astronaut>();
         if (temp != null)
         {
-            temp.jump(jump_scale);
+            temp.reverse();
         }
     }
 }
