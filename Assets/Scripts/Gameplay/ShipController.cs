@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -30,9 +31,15 @@ public class ShipController : MonoBehaviour
     private Vector3 targetAnimPosition;
     private Quaternion targetAnimRotation;
 
+    [SerializeField] private float maxFuel = 10;
+    private float fuel;
+
+    public event Action<float> staminaUpdated;
+
     // Start is called before the first frame update
     void Start()
     {
+        fuel = maxFuel;
     }
 
     // Update is called once per frame
@@ -49,6 +56,15 @@ public class ShipController : MonoBehaviour
             if (isPushing)
             {
                 currentPlanet.Push(-transform.up * thrust.Value);
+                fuel -= Time.deltaTime;
+
+                fuel = Math.Max(0, fuel);
+                if (fuel == 0)
+                {
+                    StopThrusters();
+                }
+
+                staminaUpdated?.Invoke(fuel / maxFuel);
             }
         }
     }
@@ -147,8 +163,18 @@ public class ShipController : MonoBehaviour
         }
         else if (ctx.canceled)
         {
-            isPushing = false;
-            stopThrusters.Invoke();
+            StopThrusters();
         }
+    }
+
+    public void StopThrusters()
+    {
+        isPushing = false;
+        stopThrusters.Invoke();
+    }
+
+    public void SetFuel(float seconds)
+    {
+        fuel = seconds;
     }
 }
