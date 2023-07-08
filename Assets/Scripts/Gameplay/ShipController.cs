@@ -23,6 +23,13 @@ public class ShipController : MonoBehaviour
     public UnityEvent startJump;
     public UnityEvent finishJump;
 
+    [SerializeField] float jumpDuration;
+    [SerializeField] AnimationCurve jumpCurve;
+    [SerializeField] AnimationCurve jumpRotationCurve;
+    private float animationTimer;
+    private Vector3 targetAnimPosition;
+    private Quaternion targetAnimRotation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +55,21 @@ public class ShipController : MonoBehaviour
 
     private void AnimateShip()
     {
-        FinishJump();
+        animationTimer += Time.deltaTime;
+
+        Debug.DrawRay(currentPlanet.transform.position, targetAnimPosition - currentPlanet.transform.position, Color.red);
+        Vector3 newPosition = Vector3.Lerp(pivotChild.transform.position, targetAnimPosition, jumpCurve.Evaluate(animationTimer / jumpDuration));
+
+        pivotChild.transform.rotation = Quaternion.Lerp(transform.rotation, targetAnimRotation, jumpRotationCurve.Evaluate(animationTimer / jumpDuration));
+
+        if ((newPosition - targetAnimPosition).sqrMagnitude <= .01)
+        {
+            FinishJump();
+        }
+        else
+        {
+            pivotChild.transform.position = newPosition;
+        }
     }     
 
     private void UpdateRotation()
@@ -84,11 +105,13 @@ public class ShipController : MonoBehaviour
 
     private void FinishJump()
     {
-        transform.parent = aimPlanet.transform;
-        transform.localPosition = Vector3.zero;
+        animationTimer = 0;
+        pivotChild.transform.parent = transform;
 
         transform.rotation = Quaternion.LookRotation(Vector3.forward, -transform.up);
         pivotChild.transform.localPosition = Vector3.up * (currentPlanet.transform.localScale.x + .01f);
+        targetRotation = transform.rotation;
+        pivotChild.transform.localRotation = Quaternion.identity;
 
         animating = false;
         finishJump.Invoke();
@@ -102,10 +125,16 @@ public class ShipController : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(Vector3.forward, aimPlanet.transform.position - transform.position);
         startJump.Invoke();
 
+        pivotChild.transform.parent = null;
         currentPlanet = aimPlanet;
+
+        transform.parent = currentPlanet.transform;
+        transform.localPosition = Vector3.zero;
 
         //Animate!
         animating = true;
+        targetAnimPosition = transform.position - transform.up * currentPlanet.transform.localScale.x;
+        targetAnimRotation = Quaternion.LookRotation(Vector3.forward, -transform.up);
     }
 
     public void Thrust(InputAction.CallbackContext ctx)
