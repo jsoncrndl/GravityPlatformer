@@ -609,11 +609,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet
       objectReference: {fileID: 0}
+    - target: {fileID: 3353008967008777658, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511055747051497242, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba5ff2a7d9eb6a1448c7088412daf5e0, type: 3}
     - target: {fileID: 9088132245137567496, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9088132245137567496, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1863711742530023953, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
@@ -1853,6 +1862,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 8497500978422025212, guid: bc0d1b618e0e2ac4288b651a1c01a735, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497500978422025212, guid: bc0d1b618e0e2ac4288b651a1c01a735, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ff6f6720f302b04bbea2ab787c5e3dc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1922,6 +1939,10 @@ PrefabInstance:
     - target: {fileID: 3353008967008777658, guid: 149abe6f14f4a024b9539ae5910c0046, type: 3}
       propertyPath: m_Name
       value: Astronaut
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511055747051497242, guid: 149abe6f14f4a024b9539ae5910c0046, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2072,6 +2093,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 240
       objectReference: {fileID: 0}
+    - target: {fileID: 2334177293479633544, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
+      propertyPath: m_Mass
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3214172578408470845, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.49999994
@@ -2172,6 +2197,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6739726660292016945, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 879465715, guid: 4dd662bb80cffd54a8a881f689ad64f8, type: 3}
     - target: {fileID: 7162960968743065403, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -2859,11 +2888,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3353008967008777658, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9088132245137567496, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9088132245137567496, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1863711742530023953, guid: a88dc599f3801c44182a0304c20977d6, type: 3}
@@ -2906,6 +2940,10 @@ PrefabInstance:
     - target: {fileID: 1001675436115121304, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334177293479633544, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
+      propertyPath: m_Mass
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3214172578408470845, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3007,6 +3045,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6739726660292016945, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 879465715, guid: 4dd662bb80cffd54a8a881f689ad64f8, type: 3}
     - target: {fileID: 7162960968743065403, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -3248,8 +3290,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 644863614205370353, guid: d50a55515d2278d41a67d8dd80222bd9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 644863614205370353, guid: d50a55515d2278d41a67d8dd80222bd9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 644863614205370353, guid: d50a55515d2278d41a67d8dd80222bd9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 644863614205370353, guid: d50a55515d2278d41a67d8dd80222bd9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 644863614205370353, guid: d50a55515d2278d41a67d8dd80222bd9, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1341965420671607158, guid: d50a55515d2278d41a67d8dd80222bd9, type: 3}
       propertyPath: m_RootOrder
@@ -3328,6 +3386,10 @@ PrefabInstance:
       value: ShipControls/Win[/Keyboard/enter,/DualSenseGamepadHID/start]
       objectReference: {fileID: 0}
     - target: {fileID: 6268150690757617251, guid: d50a55515d2278d41a67d8dd80222bd9, type: 3}
+      propertyPath: maxFuel
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268150690757617251, guid: d50a55515d2278d41a67d8dd80222bd9, type: 3}
       propertyPath: winLocation
       value: 
       objectReference: {fileID: 529576049}
@@ -3335,6 +3397,10 @@ PrefabInstance:
       propertyPath: currentPlanet
       value: 
       objectReference: {fileID: 1628485596}
+    - target: {fileID: 6268150690757617251, guid: d50a55515d2278d41a67d8dd80222bd9, type: 3}
+      propertyPath: startThrusters.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3367,6 +3433,10 @@ PrefabInstance:
     - target: {fileID: 1001675436115121304, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334177293479633544, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
+      propertyPath: m_Mass
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3214172578408470845, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3468,6 +3538,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6739726660292016945, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 879465715, guid: 4dd662bb80cffd54a8a881f689ad64f8, type: 3}
     - target: {fileID: 7162960968743065403, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -3733,6 +3807,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 240
       objectReference: {fileID: 0}
+    - target: {fileID: 2334177293479633544, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
+      propertyPath: m_Mass
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3214172578408470845, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.49999994
@@ -3833,6 +3911,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6739726660292016945, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 879465715, guid: 4dd662bb80cffd54a8a881f689ad64f8, type: 3}
     - target: {fileID: 7162960968743065403, guid: a4e1a619672ce16408d28a41869391d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
