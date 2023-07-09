@@ -4,6 +4,8 @@ COPYSPRIGHT
 Lowich
 Ekkoni
 Image by <a href="https://www.freepik.com/free-vector/cartoon-explosion-animation-frames_14140643.htm#page=2&query=spaceship%20sprite&position=12&from_view=keyword&track=ais">Freepik</a>
+stealthix
+norma2D
 
 ---Audio---
 Alexander Nakarada

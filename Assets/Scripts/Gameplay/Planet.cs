@@ -29,7 +29,6 @@ public class Planet : MonoBehaviour
     public void Push(Vector2 force)
     {
         rb.AddForce(force);
-        Debug.Log(force);
     }
 
     public void startAtmosphere()
