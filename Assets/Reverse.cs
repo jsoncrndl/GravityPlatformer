@@ -21,6 +21,7 @@ public class Reverse : MonoBehaviour
         Astronaut temp = collision.gameObject.GetComponent<Astronaut>();
         if (temp != null)
         {
+            Debug.Log("hit");
             temp.reverse();
         }
     }
