@@ -12,7 +12,8 @@ public class ShipHUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shipController.staminaUpdated += UpdateStamina;
+        if (shipController != null)
+            shipController.staminaUpdated += UpdateStamina;
     }
 
     private void UpdateStamina(float percent)

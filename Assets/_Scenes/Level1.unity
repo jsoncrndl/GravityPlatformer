@@ -364,8 +364,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 620199160989036970, guid: 8765588e05b23c24e994192d4b8dd938, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7784342195290329931, guid: a1b0de9269c2dbb46954c15ded8d384f, type: 2}
+    - target: {fileID: 620199160989036970, guid: 8765588e05b23c24e994192d4b8dd938, type: 3}
       propertyPath: m_characterSpacing
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 620199160989036970, guid: 8765588e05b23c24e994192d4b8dd938, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1647672797367993676, guid: 8765588e05b23c24e994192d4b8dd938, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -732,7 +740,7 @@ MonoBehaviour:
   m_text: Press  <sprite index=28> to push planets
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1b0de9269c2dbb46954c15ded8d384f, type: 2}
-  m_sharedMaterial: {fileID: 7444293321350482215, guid: a1b0de9269c2dbb46954c15ded8d384f, type: 2}
+  m_sharedMaterial: {fileID: -7784342195290329931, guid: a1b0de9269c2dbb46954c15ded8d384f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
