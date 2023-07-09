@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/BounceBridge.unity
     guid: 0e96551c0e2bb464b87894fa5383d602
   - enabled: 1
-    path: Assets/_Scenes/Move.unity
+    path: Assets/_Scenes/Level4.unity
     guid: 5957d4844a1878a47925758b31285bfe
   m_configObjects: {}
