@@ -80,6 +80,11 @@ public class Astronaut : MonoBehaviour
         spriteRenderer.flipX = !isReversed;
     }
 
+    public bool getReversed()
+    {
+        return isReversed;
+    }
+
     public void addGravity(Gravity gravity)
     {
         this.gravities.Add(gravity);

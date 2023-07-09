@@ -5,6 +5,7 @@ using UnityEngine;
 public class Planet : MonoBehaviour
 {
     private Rigidbody2D rb;
+    [SerializeField] private float angularVelocity;
     [SerializeField] private GameObject enter_atmosphere;
     [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private GameObject starEffectPrefab;
@@ -20,7 +21,12 @@ public class Planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
+    private void FixedUpdate()
+    {
+        transform.Rotate(0, 0, angularVelocity * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
