@@ -1404,6 +1404,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 946838058}
     m_Modifications:
+    - target: {fileID: 1527645483458565012, guid: 48af43efcd617a24fbe269336a7ef2f8, type: 3}
+      propertyPath: nextScene
+      value: Level4
+      objectReference: {fileID: 0}
     - target: {fileID: 7267059865866458490, guid: 48af43efcd617a24fbe269336a7ef2f8, type: 3}
       propertyPath: enterTrigger.m_PersistentCalls.m_Calls.Array.size
       value: 3
