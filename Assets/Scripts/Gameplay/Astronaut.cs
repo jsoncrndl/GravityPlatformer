@@ -15,7 +15,7 @@ public class Astronaut : MonoBehaviour
 
     bool onGround;
     [SerializeField] bool isReversed;
-    [SerializeField] float walkSpeed = 1;
+    [SerializeField] float walkSpeed = 50;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +53,7 @@ public class Astronaut : MonoBehaviour
 
         if (onGround)
         {
+            
             this.ParallelVelocity = this.transform.right * this.walkSpeed * directionModifier;
             animator.SetBool("Landed", true);
         }
@@ -98,5 +99,12 @@ public class Astronaut : MonoBehaviour
     public bool GroundCheck()
     {
         return Physics2D.OverlapCircle(transform.position + transform.up * (capsuleCollider.size.x -.01f - capsuleCollider.size.y / 2), capsuleCollider.size.x, ~ignoreLayers);
+    }
+
+    public void resetVelocity()
+    {
+        float directionModifier = isReversed ? -1 : 1;
+        rb.velocity = this.transform.right * this.walkSpeed * directionModifier;
+        Debug.Log(this.transform.right);
     }
 }
