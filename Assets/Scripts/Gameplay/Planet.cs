@@ -22,7 +22,8 @@ public class Planet : MonoBehaviour
     {
         if (collision.collider.GetComponent<Planet>())
         {
-
+            Destroy(collision.collider.GetComponent<Planet>().gameObject);
+            Destroy(this.gameObject);
         }
     }
 

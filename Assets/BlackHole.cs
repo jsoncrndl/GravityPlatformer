@@ -20,11 +20,11 @@ public class BlackHole : MonoBehaviour
     {
         if (collision.collider.GetComponent<Planet>())
         {
-
+            Destroy(collision.collider.GetComponent<Planet>().gameObject);
         }
         else if (collision.collider.GetComponent<Astronaut>())
         {
-
+            Destroy(collision.collider.GetComponent<Astronaut>().gameObject);
         }
     }
 }
