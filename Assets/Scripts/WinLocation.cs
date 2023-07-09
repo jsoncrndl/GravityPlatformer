@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class WinLocation : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class WinLocation : MonoBehaviour
 
     private void NextLevel()
     {
-        SceneManager.LoadScene(nextScene);
+        LevelManager.singleton.LoadLevel(nextScene);
     }
 
     public void SetHasWon()
