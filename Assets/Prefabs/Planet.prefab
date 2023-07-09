@@ -193,6 +193,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enter_atmosphere: {fileID: 4800545174170639651}
+  explosionPrefab: {fileID: 8212951424045928168, guid: ef75a78d824490a44a35f0044b781a82, type: 3}
+  starEffectPrefab: {fileID: 6008950981730500734, guid: ce65ed66b2df5de46b619923d98081cf, type: 3}
+  hitStopTime: {fileID: 11400000, guid: cd270bf3b9af39341bb8c5a39431ceb6, type: 2}
+  explosion: {fileID: 8300000, guid: 2bfef592e424742468e318a8b8ac1bdb, type: 3}
 --- !u!1 &4090326391594340306
 GameObject:
   m_ObjectHideFlags: 0

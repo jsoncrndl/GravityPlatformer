@@ -36,8 +36,6 @@ public class ShipController : MonoBehaviour
 
     public event Action<float> staminaUpdated;
 
-    [SerializeField] private WinLocation winLocation;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +49,11 @@ public class ShipController : MonoBehaviour
         {
             AnimateShip();
         }
-        else
+    }
+
+    private void FixedUpdate()
+    {
+        if (!animating)
         {
             UpdateRotation();
 
@@ -97,7 +99,7 @@ public class ShipController : MonoBehaviour
             transform.Rotate(transform.forward, rotationInput * -rotateSpeed * Time.deltaTime);
         }
 
-        RaycastHit2D result = Physics2D.Raycast(pivotChild.transform.position, transform.up, 100, LayerMask.GetMask("Planet"));
+        RaycastHit2D result = Physics2D.CircleCast(pivotChild.transform.position + 2 * transform.up, 2, transform.up, 100, LayerMask.GetMask("Planet"));
 
         if (result.collider != null)
         {
@@ -176,18 +178,5 @@ public class ShipController : MonoBehaviour
     public void SetFuel(float seconds)
     {
         fuel = seconds;
-    }
-
-    public void TryWin()
-    {
-        winLocation.Win();
-    }
-
-    public void ResetLevel(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            LevelManager.singleton.ResetLevel();
-        }
     }
 }

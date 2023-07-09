@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [SelectionBase]
@@ -5,6 +6,10 @@ public class Planet : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] private GameObject enter_atmosphere;
+    [SerializeField] private GameObject explosionPrefab;
+    [SerializeField] private GameObject starEffectPrefab;
+    [SerializeField] private FloatValue hitStopTime;
+    [SerializeField] private AudioClip explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -15,16 +20,34 @@ public class Planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.GetComponent<Planet>())
+        if (collision.collider != null && collision.collider.GetComponent<Planet>())
         {
-            Destroy(collision.collider.GetComponent<Planet>().gameObject);
-            Destroy(this.gameObject);
+            StartCoroutine(Explode(collision.gameObject, collision.contacts[0].point));
         }
+    }
+
+    private IEnumerator Explode(GameObject hitObject, Vector3 hitPoint)
+    {
+        Camera.main.GetComponent<CameraFunctions>().Shake();
+        hitObject.GetComponent<Rigidbody2D>().isKinematic = true;
+        hitObject.GetComponent<Rigidbody2D>().velocity *= 0;
+        rb.isKinematic = true;
+        rb.velocity *= 0;
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(hitStopTime.Value);
+        Time.timeScale = 1;
+        Instantiate(explosionPrefab, transform.position - Vector3.forward, Quaternion.identity).transform.localScale = transform.localScale;
+        Instantiate(explosionPrefab, hitObject.transform.position - Vector3.forward, Quaternion.identity).transform.localScale = transform.localScale;
+        Instantiate(starEffectPrefab, hitPoint - Vector3.forward * 2, Quaternion.identity);
+        gameObject.SetActive(false);
+        AudioSource.PlayClipAtPoint(explosion, hitPoint);
+        Destroy(gameObject, 1);
+        Destroy(hitObject);
     }
 
     public void Push(Vector2 force)
