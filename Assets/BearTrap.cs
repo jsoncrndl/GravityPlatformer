@@ -22,7 +22,7 @@ public class BearTrap : MonoBehaviour
         Astronaut temp = collision.GetComponent<Astronaut>();
         if (temp != null)
         {
-            temp.jump(jump_scale);
+            Destroy(temp.gameObject);
             animator.SetTrigger("Pressed");
         }
     }
