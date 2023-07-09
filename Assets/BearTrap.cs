@@ -6,10 +6,12 @@ public class BearTrap : MonoBehaviour
 {
     Animator animator;
     [SerializeField] float jump_scale;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class BearTrap : MonoBehaviour
         {
             Destroy(temp.gameObject);
             animator.SetTrigger("Pressed");
+            audioSource.Play();
         }
     }
 }

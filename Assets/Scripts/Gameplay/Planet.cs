@@ -33,13 +33,13 @@ public class Planet : MonoBehaviour
 
     private IEnumerator Explode(GameObject hitObject, Vector3 hitPoint)
     {
-        Camera.main.GetComponent<CameraFunctions>().Shake();
         hitObject.GetComponent<Rigidbody2D>().isKinematic = true;
         hitObject.GetComponent<Rigidbody2D>().velocity *= 0;
         rb.isKinematic = true;
         rb.velocity *= 0;
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(hitStopTime.Value);
+        Camera.main.GetComponent<CameraFunctions>().Shake();
         Time.timeScale = 1;
         Instantiate(explosionPrefab, transform.position - Vector3.forward, Quaternion.identity).transform.localScale = transform.localScale;
         Instantiate(explosionPrefab, hitObject.transform.position - Vector3.forward, Quaternion.identity).transform.localScale = transform.localScale;

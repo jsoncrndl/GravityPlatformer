@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 6681291371617214320}
   - component: {fileID: 7961410212977200176}
   - component: {fileID: 2839468319635776883}
+  - component: {fileID: 2916282514802894980}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -348,3 +349,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadingGraphic: {fileID: 7257510140116363249}
+  shakeTime: 0.5
+--- !u!114 &2916282514802894980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782915174285194552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
